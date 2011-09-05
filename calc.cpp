@@ -67,7 +67,7 @@ void Calc::calc()
     input1 = proobraz(input1);
     input1 = len(input1,value);
     ///Перевод в польскую запись
-    ///output1=vixod(input1);
+    output1=vixod(input1);
     ///Сообщение об ошибке
     if (output1 == "Error")
     {

@@ -10,6 +10,7 @@
 #include "integral.h"
 #include "text_analiz.h"
 #include "dif_int.h"
+#include "postfix_result_and_stroka_postfix.h"
 
 
 difinpoint::difinpoint(QWidget *parent) :
@@ -66,8 +67,9 @@ void difinpoint::otvet1()
     input1 = proobraz(input1);
     input1 = len(input1,value);
     ///Перевод в польскую запись
-    ///output1=vixod(input1);
-    if (output1 == "Error")
+    output1=vixod(input1);
+
+    if (output1[0] == 'E')
     {
         QMessageBox msgBox(QMessageBox::Information,
             ("Error"),
@@ -77,7 +79,7 @@ void difinpoint::otvet1()
         ui->outputEdit->setText("Error!!");
         ui->outputEdit->setEnabled(true);
         ui->outputEdit->setVisible(true);
-        ui->pushButton_3->setFocus();
+        ui->pushButton->setFocus();
     }
    else
     {

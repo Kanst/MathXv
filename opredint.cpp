@@ -10,6 +10,7 @@
 #include "text_analiz.h"
 #include "dif_int.cpp"
 #include "integral.h"
+#include "postfix_result_and_stroka_postfix.h"
 
 opredint::opredint(QWidget *parent) :
     QDialog(parent),
@@ -73,8 +74,22 @@ void opredint::otvet1()
     input1 = proobraz(input1);
     input1 = len(input1,value);
     ///Перевод в польскую запись
-    ///output1=vixod(input1);
+    output1 = vixod(input1);
     ///Вычисление методом прямоугольников
+     if (output1[0] == 'E')
+    {
+        QMessageBox msgBox(QMessageBox::Information,
+            ("Error"),
+            ("������.���������� � �������."),
+            QMessageBox::Ok);
+        msgBox.exec();
+        ui->outputEdit->setText("Error!!");
+        ui->outputEdit->setEnabled(true);
+        ui->outputEdit->setVisible(true);
+        ui->pushButton->setFocus();
+    }
+   else
+    {
     if (ui->radioButton->isChecked())
     {
         r = int_pram(input1,x,y,1000);
@@ -97,4 +112,5 @@ void opredint::otvet1()
         ui->pushButton_3->setDefault(true);
         ui->pushButton_3->setEnabled(true);
         ui->pushButton_3->setFocus();
+    }
 }
