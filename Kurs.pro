@@ -15,21 +15,24 @@ SOURCES += calc.cpp\
     integral.cpp \
     main.cpp \
     difinpoint.cpp \
-    opredint.cpp
+    opredint.cpp \
+    matr.cpp
 
 
 HEADERS  +=  calc.h \
     one.h \
     integral.h \
     difinpoint.h \
-    opredint.h
+    opredint.h \
+    matr.h
 
 
 FORMS    += calc.ui \
     one.ui \
     integral.ui \
     difinpoint.ui \
-    opredint.ui
+    opredint.ui \
+    matr.ui
 
 
 RESOURCES += \

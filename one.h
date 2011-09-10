@@ -28,6 +28,7 @@ private:
 public slots:
     void begin1();
     void analiz();
+    void close1();
 };
 
 #endif // ONE_H

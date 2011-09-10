@@ -9,6 +9,7 @@
 #include "ui_one.h"
 #include "integral.h"
 #include "calc.h"
+#include "matr.h"
 
 one::one(QWidget *parent) :
     QDialog(parent),
@@ -21,6 +22,8 @@ one::one(QWidget *parent) :
      connect(ui->pushButton_4,SIGNAL(clicked(bool)),this,SLOT(analiz()));
      connect(ui->pushButton_7,SIGNAL(clicked(bool)),this,SLOT(analiz()));
      connect(ui->pushButton_2,SIGNAL(clicked(bool)),this,SLOT(close()));
+     connect(ui->pushButton_5,SIGNAL(clicked(bool)),this,SLOT(close1()));
+     connect(ui->pushButton_8,SIGNAL(clicked(bool)),this,SLOT(close1()));
 }
 
 one::~one()
@@ -41,5 +44,12 @@ void one::analiz()
 {
     integral *an = new integral();
     an->show();
+    close();
+}
+
+void one::close1()
+{
+    Matr *w3 = new Matr();
+    w3->show();
     close();
 }
