@@ -16,7 +16,7 @@ Matr::Matr(QWidget *parent) :
        connect(ui->lineEdit_2 ,SIGNAL(editingFinished()),this,SLOT(begin2()));
        connect(ui->lineEdit ,  SIGNAL(editingFinished()),this,SLOT(begin2()));
        connect(ui->result,SIGNAL(clicked(bool)),this,SLOT(begin()));
-       connect(ui->pushButton_2,SIGNAL(clicked(bool)),this,SLOT(close()));
+       connect(ui->pushButton_2,SIGNAL(clicked(bool)),this,SLOT(close1()));
 }
 
 Matr::~Matr()
@@ -93,7 +93,7 @@ void Matr::begin()
             result = result1 + result2;
             else
             result = result1 - result2;
-            buf.setNum(result,6,6);
+            buf.setNum(result);
             ui->tableWidget_4->setItem(i,j,new QTableWidgetItem(buf));
             }
             }
