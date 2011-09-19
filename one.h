@@ -29,6 +29,7 @@ public slots:
     void begin1();
     void analiz();
     void close1();
+    void spravka1();
 };
 
 #endif // ONE_H

@@ -10,6 +10,7 @@
 #include "integral.h"
 #include "calc.h"
 #include "matr.h"
+#include "spravka.h"
 
 one::one(QWidget *parent) :
     QDialog(parent),
@@ -24,6 +25,8 @@ one::one(QWidget *parent) :
      connect(ui->pushButton_2,SIGNAL(clicked(bool)),this,SLOT(close()));
      connect(ui->pushButton_5,SIGNAL(clicked(bool)),this,SLOT(close1()));
      connect(ui->pushButton_8,SIGNAL(clicked(bool)),this,SLOT(close1()));
+     connect(ui->pushButton_3,SIGNAL(clicked(bool)),this,SLOT(spravka1()));
+     connect(ui->pushButton_9,SIGNAL(clicked(bool)),this,SLOT(spravka1()));
 }
 
 one::~one()
@@ -52,4 +55,12 @@ void one::close1()
     Matr *w3 = new Matr();
     w3->show();
     close();
+}
+
+void one::spravka1()
+{
+    Spravka *w3 = new Spravka();
+    w3->show();
+    close();
+
 }

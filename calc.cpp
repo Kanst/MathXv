@@ -10,6 +10,7 @@
 #include "postfix_result_and_stroka_postfix.cpp"
 #include "text_analiz.cpp"
 #include "one.h"
+#include <QFile>
 
  Calc::Calc(QWidget *parent) :
     QDialog(parent),

@@ -16,7 +16,8 @@ SOURCES += calc.cpp\
     main.cpp \
     difinpoint.cpp \
     opredint.cpp \
-    matr.cpp
+    matr.cpp \
+    spravka.cpp
 
 
 HEADERS  +=  calc.h \
@@ -24,7 +25,8 @@ HEADERS  +=  calc.h \
     integral.h \
     difinpoint.h \
     opredint.h \
-    matr.h
+    matr.h \
+    spravka.h
 
 
 FORMS    += calc.ui \
@@ -32,7 +34,8 @@ FORMS    += calc.ui \
     integral.ui \
     difinpoint.ui \
     opredint.ui \
-    matr.ui
+    matr.ui \
+    spravka.ui
 
 
 RESOURCES += \
