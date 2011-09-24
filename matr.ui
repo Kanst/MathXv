@@ -88,9 +88,16 @@
          <item>
           <layout class="QVBoxLayout" name="verticalLayout">
            <item>
+            <widget class="QPushButton" name="pushButton_3">
+             <property name="text">
+              <string>&quot;+&quot; или &quot;-&quot;</string>
+             </property>
+            </widget>
+           </item>
+           <item>
             <widget class="QRadioButton" name="radioButton">
              <property name="text">
-              <string>А+Б</string>
+              <string>А+В</string>
              </property>
              <property name="checked">
               <bool>true</bool>
@@ -100,14 +107,14 @@
            <item>
             <widget class="QRadioButton" name="radioButton_2">
              <property name="text">
-              <string>А-Б</string>
+              <string>А-В</string>
              </property>
             </widget>
            </item>
            <item>
             <widget class="QPushButton" name="result">
              <property name="text">
-              <string>  =</string>
+              <string>A*B</string>
              </property>
             </widget>
            </item>

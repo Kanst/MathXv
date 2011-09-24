@@ -17,7 +17,10 @@ public:
 
 private:
     Ui::Spravka *ui;
+
 public slots:
+
+    void close1();
 
 };
 

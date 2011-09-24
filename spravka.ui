@@ -69,7 +69,7 @@
       <property name="geometry">
        <rect>
         <x>0</x>
-        <y>-113</y>
+        <y>0</y>
         <width>599</width>
         <height>375</height>
        </rect>
@@ -132,7 +132,7 @@ th 	гиперболический тангенс</string>
         <widget class="QLabel" name="label_5">
          <property name="text">
           <string>Неверно:  2+2x 	  Верно: 2+2*x
-Неверно:  2+2^-1	  Верно: 2+2*(-1)
+Неверно:  2+2^-1	  Верно: 2+2^(-1)
 Неверно:  2+2(3+sin1) 	  Верно: 2+2*(3+sin(1))
 </string>
          </property>

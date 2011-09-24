@@ -23,6 +23,7 @@ public slots:
   void begin();
   void begin2();
   void close1();
+  void proizved();
 };
 
 #endif // MATR_H
