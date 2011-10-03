@@ -459,6 +459,21 @@ void Matr::obratnaya()
 
 
     det = Det(matr1,xx);
+    if (det == 0)
+    {
+        QMessageBox msgBox(QMessageBox::Information,
+            ("Error"),
+            ("Ошибка.Определитель матрицы равен 0"),
+            QMessageBox::Ok);
+        msgBox.exec();
+        ui->lineEdit_6->setVisible(false);
+        ui->lineEdit_5->setVisible(false);
+        ui->label_6->setVisible(false);
+        ui->label_7->setVisible(false);
+        ui->tableWidget_4->setVisible(false);
+    }
+    else
+    {
     if(det)
     {
        for(int i = 0; i < xx; i++)
@@ -480,7 +495,7 @@ void Matr::obratnaya()
             buf.setNum(rezmatr1 [i][j]);
             ui->tableWidget_4->setItem(i,j,new QTableWidgetItem(buf));
         }
-
+    }
 
     }
 }

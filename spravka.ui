@@ -152,8 +152,8 @@ th 	гиперболический тангенс</string>
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>550</width>
-        <height>60</height>
+        <width>1199</width>
+        <height>103</height>
        </rect>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout_4">
@@ -163,8 +163,15 @@ th 	гиперболический тангенс</string>
           <bool>true</bool>
          </property>
          <property name="text">
-          <string>1)+/- inf  - бесконечность
-2)При вычислении производной в точке переменная y ведет себя как число</string>
+          <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Ubuntu'; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;1)+/- inf  - бесконечность&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;2)При вычислении производной в точке переменная &lt;span style=&quot; font-weight:600;&quot;&gt;y&lt;/span&gt; ведет себя как число&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;3)Нежелательно при вычислении выражения(производной,интегралла) рассчитывать константу(например неверно писать 256, желательно написать 1*256 или 0+256)&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;4)При произведении матриц кол-во строк 1й матрицы должно быть равно кол-ву столбцов 2й матрицы.&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;5)При вычислении определителя и обратной матрицы матрица должна быть квадратной.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
         </widget>
        </item>
