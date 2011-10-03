@@ -16,6 +16,7 @@ Matr::Matr(QWidget *parent) :
        ui->lineEdit_5->setVisible(false);
        ui->label_6->setVisible(false);
        ui->label_7->setVisible(false);
+       ui->tableWidget_4->setVisible(false);
        connect(ui->lineEdit_4 ,SIGNAL(editingFinished()),this,SLOT(begin2()));
        connect(ui->lineEdit_3 ,SIGNAL(editingFinished()),this,SLOT(begin2()));
        connect(ui->lineEdit_2 ,SIGNAL(editingFinished()),this,SLOT(begin2()));
@@ -23,6 +24,7 @@ Matr::Matr(QWidget *parent) :
        connect(ui->pushButton_3,SIGNAL(clicked(bool)),this,SLOT(begin()));
        connect(ui->pushButton_2,SIGNAL(clicked(bool)),this,SLOT(close1()));
        connect(ui->pushButton,SIGNAL(clicked(bool)),this,SLOT(determinant()));
+       connect(ui->pushButton_4,SIGNAL(clicked(bool)),this,SLOT(obratnaya()));
        connect(ui->result,SIGNAL(clicked(bool)),this,SLOT(proizved()));
 }
 
@@ -52,7 +54,7 @@ void Matr::begin()
     {
     bool t=true;
     QString buf,buf1,buf2;
-    double ijA,ijB,result1,result2,result;
+    double result1,result2,result;
     ui->tableWidget_4->setRowCount(yy);
     ui->tableWidget_4->setColumnCount(xx);
     for(int i=0; i<=xx; i++)
@@ -169,6 +171,7 @@ void Matr::begin2()
     ui->lineEdit_5->setVisible(false);
     ui->label_6->setVisible(false);
     ui->label_7->setVisible(false);
+    ui->tableWidget_4->setVisible(false);
 }
 
 void Matr::close1()
@@ -186,6 +189,11 @@ void Matr::proizved()
     zz = ui->lineEdit_2->text().toInt(&OOk,10);
     yy = ui->lineEdit_3->text().toInt(&Okk,10);
     cc = ui->lineEdit->text().toInt(&KKK,10);
+    ui->lineEdit_6->setVisible(false);
+    ui->lineEdit_5->setVisible(false);
+    ui->label_6->setVisible(false);
+    ui->label_7->setVisible(false);
+    ui->tableWidget_4->setVisible(true);
     if (xx > 100 || yy > 100 || zz > 100 || cc > 100)
     {
         QMessageBox msgBox(QMessageBox::Information,
@@ -212,7 +220,6 @@ void Matr::proizved()
     bool t=true;
     double matr1[100][100], matr2[100][100] , rezmatr[100][100];
     QString buf,buf1,buf2;
-    double ijA,ijB,result1,result2,result;
     ui->tableWidget_4->setRowCount(yy);
     ui->tableWidget_4->setColumnCount(yy);
     for(int i=0; i<=yy; i++)
@@ -292,6 +299,7 @@ void Matr::determinant()
     zz = ui->lineEdit_2->text().toInt(&OOk,10);
     yy = ui->lineEdit_3->text().toInt(&Okk,10);
     cc = ui->lineEdit->text().toInt(&KKK,10);
+
     if (xx > 100 || yy > 100 || zz > 100 || cc > 100)
     {
         QMessageBox msgBox(QMessageBox::Information,
@@ -316,14 +324,17 @@ void Matr::determinant()
     else
     {
     bool t=true;
-    double **matr1 = new double * [xx],**matr2 = new double * [xx];
+    double **matr1 = new double * [xx],**matr2 = new double * [zz];
     for(int i = 0; i < xx; i++)
             {
                 matr1[i] = new double[xx];
-                matr2[i] = new double[xx];
+            }
+    for(int i = 0; i < zz; i++)
+            {
+                matr2[i] = new double[zz];
             }
     QString buf,buf1,buf2;
-    double ijA,ijB,result1,result2,result;
+    double result1,result2;
 
     for(int i=0; i<yy; i++)
         for (int j=0;j<xx; j++)
@@ -365,13 +376,111 @@ void Matr::determinant()
     ui->lineEdit_5->setVisible(true);
     ui->label_6->setVisible(true);
     ui->label_7->setVisible(true);
+    ui->tableWidget_4->setVisible(false);
     result1 = Det(matr1,xx);
-    result2 = Det(matr2,xx);
+    result2 = Det(matr2,zz);
     QString dett1,dett2;
     dett1.setNum(result1);
     dett2.setNum(result2);
     ui->lineEdit_6->setText(dett2);
     ui->lineEdit_5->setText(dett1);
+    }
+}
+
+void Matr::obratnaya()
+{
+    bool Ok=true,OOk=true,Okk=true,KKK=true;
+    int xx,yy,zz,cc;
+    xx = ui->lineEdit_4->text().toInt(&Ok,10);
+    yy = ui->lineEdit_3->text().toInt(&Okk,10);
+    ui->lineEdit_6->setVisible(false);
+    ui->lineEdit_5->setVisible(false);
+    ui->label_6->setVisible(false);
+    ui->label_7->setVisible(false);
+    ui->tableWidget_4->setVisible(true);
+    if (xx > 100 || yy > 100 )
+    {
+        QMessageBox msgBox(QMessageBox::Information,
+            ("Error"),
+            ("Ошибка.Обратитесь в справку(Размерность должны быть меньше 100)"),
+            QMessageBox::Ok);
+        msgBox.exec();
+            ui->lineEdit_4->setText("0");
+            ui->lineEdit_3->setText("0");
+    }
+    else
+    if (xx != yy )
+    {
+        QMessageBox msgBox(QMessageBox::Information,
+            ("Error"),
+            ("Ошибка.Обратитесь в справку(Матрица должна быть квадратной)"),
+            QMessageBox::Ok);
+        msgBox.exec();
+    }
+    else
+    {
+    bool t=true;
+    double **matr1 = new double * [xx],**rezmatr1 = new double * [xx];
+    for(int i = 0; i < xx; i++)
+            {
+                matr1[i] = new double[xx];
+                rezmatr1[i] = new double[xx];
+            }
+
+    QString buf,buf1,buf2;
+    double result1,result2,det;
+    ui->tableWidget_4->setRowCount(yy);
+    ui->tableWidget_4->setColumnCount(yy);
+    for(int i=0; i<=yy; i++)
+        for (int j=0;j<=yy; j++)
+        {
+            ui->tableWidget_4->horizontalHeader()->resizeSection(i,50);
+            ui->tableWidget_4->verticalHeader()->resizeSection(j,50);
+        }
+
+    for(int i=0; i<yy; i++)
+        for (int j=0;j<xx; j++)
+        {
+           buf1 = ui->tableWidget->item(i,j)->text();
+           matr1 [i][j] = buf1.toDouble(&t);
+           if (t == false)
+           {
+               QMessageBox msgBox(QMessageBox::Information,
+                   ("Error"),
+                   ("Ошибка.Обратитесь в справку.(Введено неверное значение)"),
+                   QMessageBox::Ok);
+               msgBox.exec();
+               QTableWidgetItem *newitem= new QTableWidgetItem();
+               newitem->setText("0");
+               ui->tableWidget->setItem(i,j,newitem);
+           }
+        }
+
+
+
+    det = Det(matr1,xx);
+    if(det)
+    {
+       for(int i = 0; i < xx; i++)
+       {
+           for(int j = 0; j < xx; j++)
+           {
+               int m1 = xx - 1;
+               double **temp_matr = new double * [m1];
+               for(int k = 0; k < m1; k++)
+               temp_matr[k] = new double[m1];
+               Get_matr(matr1, xx, temp_matr, i, j);
+               rezmatr1[i][j] = pow(-1.0, i + j + 2) * Det(temp_matr, m1) / det;
+            }
+        }
+    }
+    for(int i=0; i<xx; i++)
+        for (int j=0;j<xx; j++)
+        {
+            buf.setNum(rezmatr1 [i][j]);
+            ui->tableWidget_4->setItem(i,j,new QTableWidgetItem(buf));
+        }
+
 
     }
 }

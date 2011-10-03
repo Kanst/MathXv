@@ -1,4 +1,5 @@
 
+#include "determ.h"
 
 //Вычеркивания строки и столбца
 void Get_matr(double **matr, int n, double **temp_matr, int indRow, int indCol)

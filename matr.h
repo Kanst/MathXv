@@ -25,6 +25,7 @@ public slots:
   void close1();
   void proizved();
   void determinant();
+  void obratnaya();
 };
 
 #endif // MATR_H

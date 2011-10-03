@@ -119,6 +119,13 @@
             </widget>
            </item>
            <item>
+            <widget class="QPushButton" name="pushButton_4">
+             <property name="text">
+              <string>A^(-1)</string>
+             </property>
+            </widget>
+           </item>
+           <item>
             <widget class="QPushButton" name="pushButton">
              <property name="text">
               <string>Det AB</string>
