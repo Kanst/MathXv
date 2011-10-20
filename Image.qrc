@@ -1,14 +1,11 @@
 <RCC>
     <qresource prefix="/">
-        <file>Res/3.jpg</file>
-        <file>Res/4.png</file>
-        <file>Res/5.jpeg</file>
         <file>Res/6.png</file>
-        <file>Res/7.jpeg</file>
         <file>Res/8.png</file>
         <file>Res/difin1.png</file>
         <file>Res/int1.png</file>
         <file>Res/int2.png</file>
         <file>Res/spravka.png</file>
+        <file>Res/3.png</file>
     </qresource>
 </RCC>
