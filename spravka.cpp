@@ -8,6 +8,7 @@ Spravka::Spravka(QWidget *parent) :
 {
     ui->setupUi(this);
     connect(ui->pushButton,SIGNAL(clicked(bool)),this,SLOT(close1()));
+    Spravka::setPalette(Qt::gray);
 }
 
 Spravka::~Spravka()

@@ -24,6 +24,7 @@ opredint::opredint(QWidget *parent) :
      connect(ui->pushButton,SIGNAL(clicked(bool)),this,SLOT(closse1()));
      connect(ui->lineEdit,SIGNAL(returnPressed()),this,SLOT(otvet1()));
      connect(ui->pushButton_3,SIGNAL(clicked(bool)),this,SLOT(otvet1()));
+     opredint::setPalette(Qt::gray);
 }
 
 opredint::~opredint()

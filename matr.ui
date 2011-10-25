@@ -2,6 +2,9 @@
 <ui version="4.0">
  <class>Matr</class>
  <widget class="QDialog" name="Matr">
+  <property name="windowModality">
+   <enum>Qt::NonModal</enum>
+  </property>
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -11,7 +14,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>MathX</string>
   </property>
   <property name="sizeGripEnabled">
    <bool>true</bool>
@@ -34,7 +37,7 @@
           </font>
          </property>
          <property name="text">
-          <string>MathX v. 0.01</string>
+          <string>MathX</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>

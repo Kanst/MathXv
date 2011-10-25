@@ -26,6 +26,7 @@ Matr::Matr(QWidget *parent) :
        connect(ui->pushButton,SIGNAL(clicked(bool)),this,SLOT(determinant()));
        connect(ui->pushButton_4,SIGNAL(clicked(bool)),this,SLOT(obratnaya()));
        connect(ui->result,SIGNAL(clicked(bool)),this,SLOT(proizved()));
+       Matr::setPalette(Qt::gray);
 }
 
 Matr::~Matr()

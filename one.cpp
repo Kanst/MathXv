@@ -27,6 +27,7 @@ one::one(QWidget *parent) :
      connect(ui->pushButton_8,SIGNAL(clicked(bool)),this,SLOT(close1()));
      connect(ui->pushButton_3,SIGNAL(clicked(bool)),this,SLOT(spravka1()));
      connect(ui->pushButton_9,SIGNAL(clicked(bool)),this,SLOT(spravka1()));
+     one::setPalette(Qt::gray);
 }
 
 one::~one()

@@ -25,6 +25,7 @@
     ///Сигнал рассчета выражения
     connect(ui->lineEdit,SIGNAL(returnPressed()),this,SLOT(calc()));
     connect(ui->pushButton,SIGNAL(clicked(bool)),this,SLOT(calc()));
+    Calc::setPalette(Qt::gray);
 }
 
 Calc::~Calc()

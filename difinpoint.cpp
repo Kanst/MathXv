@@ -25,6 +25,7 @@ difinpoint::difinpoint(QWidget *parent) :
     connect(ui->pushButton,SIGNAL(clicked(bool)),this,SLOT(closse1()));
     connect(ui->lineEdit,SIGNAL(returnPressed()),this,SLOT(otvet1()));
     connect(ui->pushButton_3,SIGNAL(clicked(bool)),this,SLOT(otvet1()));
+    difinpoint::setPalette(Qt::gray);
 }
 
 difinpoint::~difinpoint()
