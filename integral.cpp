@@ -20,7 +20,7 @@ integral::integral(QWidget *parent) :
     connect(ui->pushButton_3,SIGNAL(clicked(bool)),this,SLOT(closse()));
     connect(ui->pushButton,SIGNAL(clicked(bool)),this,SLOT(begin1()));
     connect(ui->pushButton_2,SIGNAL(clicked(bool)),this,SLOT(begin2()));
-    integral::setPalette(Qt::gray);
+ //   integral::setPalette(Qt::gray);
 }
 
 integral::~integral()

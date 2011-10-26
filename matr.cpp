@@ -26,7 +26,7 @@ Matr::Matr(QWidget *parent) :
        connect(ui->pushButton,SIGNAL(clicked(bool)),this,SLOT(determinant()));
        connect(ui->pushButton_4,SIGNAL(clicked(bool)),this,SLOT(obratnaya()));
        connect(ui->result,SIGNAL(clicked(bool)),this,SLOT(proizved()));
-       Matr::setPalette(Qt::gray);
+    //   Matr::setPalette(Qt::gray);
 }
 
 Matr::~Matr()
@@ -34,6 +34,7 @@ Matr::~Matr()
     delete ui;
 }
 
+//Сложение\вычитание матриц
 void Matr::begin()
 
 {
@@ -62,7 +63,7 @@ void Matr::begin()
         for (int j=0;j<=yy; j++)
         {
             ui->tableWidget_4->horizontalHeader()->resizeSection(i,50);
-            ui->tableWidget_4->verticalHeader()->resizeSection(j,50);
+           ui->tableWidget_4->verticalHeader()->resizeSection(j,50);
         }
 
     for(int i=0; i<yy; i++)
@@ -108,8 +109,14 @@ void Matr::begin()
             }
         }
     }
+    ui->lineEdit_6->setVisible(false);
+    ui->lineEdit_5->setVisible(false);
+    ui->label_6->setVisible(false);
+    ui->label_7->setVisible(false);
+    ui->tableWidget_4->setVisible(true);
 }
 
+//Изменение размерностей матрицы
 void Matr::begin2()
 {
     int mA,mB,nA,nB;
@@ -175,6 +182,7 @@ void Matr::begin2()
     ui->tableWidget_4->setVisible(false);
 }
 
+//Закрытие формы
 void Matr::close1()
 {
    one *w3 = new one();
@@ -182,6 +190,8 @@ void Matr::close1()
    close();
 }
 
+
+//Произведение матриц
 void Matr::proizved()
 {
     bool Ok=true,OOk=true,Okk=true,KKK=true;
@@ -271,7 +281,6 @@ void Matr::proizved()
         {
 
                rezmatr[i][j] = 0;
-
         }
 
     for(int i=0; i<yy; i++)
@@ -292,6 +301,7 @@ void Matr::proizved()
     }
 }
 
+//Подсчет определителя
 void Matr::determinant()
 {
     bool Ok=true,OOk=true,Okk=true,KKK=true;
@@ -370,7 +380,6 @@ void Matr::determinant()
                QTableWidgetItem *newitem= new QTableWidgetItem();
                newitem->setText("0");
                ui->tableWidget->setItem(i,j,newitem);
-
            }
         }
     ui->lineEdit_6->setVisible(true);
@@ -388,6 +397,7 @@ void Matr::determinant()
     }
 }
 
+//Вычисление обратной матрицы
 void Matr::obratnaya()
 {
     bool Ok=true,OOk=true,Okk=true,KKK=true;
@@ -456,8 +466,6 @@ void Matr::obratnaya()
                ui->tableWidget->setItem(i,j,newitem);
            }
         }
-
-
 
     det = Det(matr1,xx);
     if (det == 0)
