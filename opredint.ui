@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MathX</string>
+   <string>&quot;Вычисление интеграла&quot;</string>
   </property>
   <property name="sizeGripEnabled">
    <bool>true</bool>
