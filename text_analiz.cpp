@@ -470,3 +470,4 @@ char *len(char* input1,char* value)
       input1[i-1] = '\0';   
       return input1;
 }
+

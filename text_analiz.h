@@ -94,4 +94,6 @@ char *len(char* input1,char* value);
 ///Функция преобразует строку к нужному виду
 char *proobraz(char* input);
 
+
+
 #endif

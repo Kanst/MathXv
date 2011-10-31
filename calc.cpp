@@ -11,6 +11,8 @@
 #include "text_analiz.cpp"
 #include "one.h"
 #include <QFile>
+#include <string.h>
+#include <stdlib.h>
 
  Calc::Calc(QWidget *parent) :
     QDialog(parent),
@@ -65,13 +67,41 @@ void Calc::calc()
     char *input1, *output1 ;
     input1 = output1 = new char [100];
     input1 = value;
+    bool proverka=false;
+    #define is_operator(c) (c == '+' || c == '-' || c == '/' || c == '*' || c == '!' || c == '^' || c == '%' || c == '=' )
+    for(int i = 0; i<= strlen(input1);i++)
+    {
+        if(is_operator(input1[i]))
+           { proverka = true;
+            break;
+           }
+
+    }
+    if (proverka == false)
+    {
+        {
+            QMessageBox msgBox(QMessageBox::Information,
+                ("Error"),
+                ("Ошибка(введите действие с выражением).Обратитесь в справку."),
+                QMessageBox::Ok);
+            msgBox.exec();
+            ui->outputEdit->setText("Error!!");
+            ui->outputEdit->setEnabled(true);
+            ui->outputEdit->setVisible(true);
+            ui->pushButton->setFocus();
+        }
+
+    }
+    else
+    {
     ///Преобразование строки
     input1 = proobraz(input1);
     input1 = len(input1,value);
     ///Перевод в польскую запись
     output1=vixod(input1);
+
     ///Сообщение об ошибке
-    if (output1 == "Error")
+    if (output1 == "Error" )
     {
         QMessageBox msgBox(QMessageBox::Information,
             ("Error"),
@@ -95,6 +125,7 @@ void Calc::calc()
         ui->pushButton->setEnabled(true);
         ui->pushButton->setFocus();
    }
+    }
 }
 ///Вызов начальной формы,закрытие текущей
 void Calc::closse()
