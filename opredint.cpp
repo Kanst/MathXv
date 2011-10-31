@@ -64,39 +64,15 @@ void opredint::otvet1()
     x = str_x.toDouble(&Ok);
     str_y = ui->lineEdit_3->text();
     y = str_y.toDouble(&Ok);
+    str[str.length()+1]='+';
+    str[str.length()+2]='0';
     char* value=new char[100];
     QByteArray ar = str.toAscii();
     char* sometext=ar.data();
     value=sometext;
     char *input1, *output1 ;
     input1 = output1 = new char [100];
-    input1 = value;bool proverka=false;
-#define is_operator(c) (c == '+' || c == '-' || c == '/' || c == '*' || c == '!' || c == '^' || c == '%' || c == '=' )
-for(int i = 0; i<= strlen(input1);i++)
-{
-    if(is_operator(input1[i]))
-       { proverka = true;
-        break;
-       }
-
-}
-if (proverka == false)
-{
-    {
-        QMessageBox msgBox(QMessageBox::Information,
-            ("Error"),
-            ("Ошибка(введите действие с выражением).Обратитесь в справку."),
-            QMessageBox::Ok);
-        msgBox.exec();
-        ui->outputEdit->setText("Error!!");
-        ui->outputEdit->setEnabled(true);
-        ui->outputEdit->setVisible(true);
-        ui->pushButton->setFocus();
-    }
-
-}
-else
-{
+    input1 = value;
 
    ///РџСЂРµРѕР±СЂР°Р·РѕРІР°РЅРёРµ СЃС‚СЂРѕРєРё
     input1 = proobraz(input1);
@@ -141,5 +117,5 @@ else
         ui->pushButton_3->setEnabled(true);
         ui->pushButton_3->setFocus();
     }
-}
+
 }
