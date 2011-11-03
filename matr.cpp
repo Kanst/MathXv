@@ -1,3 +1,9 @@
+/*
+ * Форма работы с матрицами
+ * Авраменко Евгений АК5-31
+ *
+ * Производит сумму, разность,произведение, вычисляет определитель и обратную матрицу.
+ */
 #include "matr.h"
 #include "ui_matr.h"
 #include "one.h"
@@ -175,6 +181,19 @@ void Matr::begin2()
         if (KKK== false)
             ui->lineEdit->setText("0");
     }
+
+    if (xx > 10 || yy > 0 || zz > 10 || cc > 10)
+    {
+        QMessageBox msgBox(QMessageBox::Information,
+            ("Error"),
+            ("Ошибка.Обратитесь в справку(Размерность должны быть меньше 1  0)"),
+            QMessageBox::Ok);
+        msgBox.exec();
+        ui->lineEdit_4->setText("0");
+        ui->lineEdit_3->setText("0");
+        ui->lineEdit_2->setText("0");
+        ui->lineEdit->setText("0");
+    }
     ui->lineEdit_6->setVisible(false);
     ui->lineEdit_5->setVisible(false);
     ui->label_6->setVisible(false);
@@ -205,19 +224,7 @@ void Matr::proizved()
     ui->label_6->setVisible(false);
     ui->label_7->setVisible(false);
     ui->tableWidget_4->setVisible(true);
-    if (xx > 100 || yy > 100 || zz > 100 || cc > 100)
-    {
-        QMessageBox msgBox(QMessageBox::Information,
-            ("Error"),
-            ("Ошибка.Обратитесь в справку(Размерность должны быть меньше 100)"),
-            QMessageBox::Ok);
-        msgBox.exec();
-        ui->lineEdit_4->setText("0");
-        ui->lineEdit_3->setText("0");
-        ui->lineEdit_2->setText("0");
-        ui->lineEdit->setText("0");
-    }
-    else
+
     if (yy != zz)
     {
         QMessageBox msgBox(QMessageBox::Information,
@@ -311,19 +318,7 @@ void Matr::determinant()
     yy = ui->lineEdit_3->text().toInt(&Okk,10);
     cc = ui->lineEdit->text().toInt(&KKK,10);
 
-    if (xx > 100 || yy > 100 || zz > 100 || cc > 100)
-    {
-        QMessageBox msgBox(QMessageBox::Information,
-            ("Error"),
-            ("Ошибка.Обратитесь в справку(Размерность должны быть меньше 100)"),
-            QMessageBox::Ok);
-        msgBox.exec();
-            ui->lineEdit_4->setText("0");
-            ui->lineEdit_3->setText("0");
-            ui->lineEdit_2->setText("0");
-            ui->lineEdit->setText("0");
-    }
-    else
+
     if (xx != yy || zz != cc)
     {
         QMessageBox msgBox(QMessageBox::Information,
@@ -409,17 +404,7 @@ void Matr::obratnaya()
     ui->label_6->setVisible(false);
     ui->label_7->setVisible(false);
     ui->tableWidget_4->setVisible(true);
-    if (xx > 100 || yy > 100 )
-    {
-        QMessageBox msgBox(QMessageBox::Information,
-            ("Error"),
-            ("Ошибка.Обратитесь в справку(Размерность должны быть меньше 100)"),
-            QMessageBox::Ok);
-        msgBox.exec();
-            ui->lineEdit_4->setText("0");
-            ui->lineEdit_3->setText("0");
-    }
-    else
+
     if (xx != yy )
     {
         QMessageBox msgBox(QMessageBox::Information,

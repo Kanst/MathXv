@@ -1,3 +1,8 @@
+/*
+ * Модуль формы справка
+ * Авраменко Е. АК5-31
+ * */
+
 #ifndef SPRAVKA_H
 #define SPRAVKA_H
 

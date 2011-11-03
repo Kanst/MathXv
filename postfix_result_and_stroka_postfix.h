@@ -28,6 +28,7 @@ T	sh 	гиперболический синус	+  +
 Y	sqrt 	квадратный корень	+ +
 V	tan 	тангенс	+ +
 W	th 	гиперболический тангенс	+ +
+* Авраменко Е. АК5-31
 */
 
 #ifndef POSTFIX_RESULT_AND_STROKA_POSTFIX_H
