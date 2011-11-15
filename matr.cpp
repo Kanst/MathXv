@@ -182,11 +182,11 @@ void Matr::begin2()
             ui->lineEdit->setText("0");
     }
 
-    if (xx > 10 || yy > 0 || zz > 10 || cc > 10)
+    if (xx > 10 || yy > 10 || zz > 10 || cc > 10)
     {
         QMessageBox msgBox(QMessageBox::Information,
             ("Error"),
-            ("Ошибка.Обратитесь в справку(Размерность должны быть меньше 1  0)"),
+            ("Ошибка.Обратитесь в справку(Размерность должны быть меньше 10)"),
             QMessageBox::Ok);
         msgBox.exec();
         ui->lineEdit_4->setText("0");
